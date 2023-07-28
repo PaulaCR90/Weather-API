@@ -1,0 +1,26 @@
+.spinner-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.spinner-div img {
+  height: fit-content;
+}
+
+.spinner {
+    width: 25%;
+    animation: spin 2s ease infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+

@@ -1,0 +1,19 @@
+/* coords background {
+    01d - sol
+    02d - sol + nube
+    03d - nube clara
+    04d - nube gris
+    09d - nube gris + lluvia
+    10d - sol + nube + lluvia
+    11d - nube gris + tormenta
+    13d - nieve
+    50d - niebla
+}
+
+Para iconos nocturnos n en lugar de d */
+
+/* if (datosHome.condiciones === 01d) */
+
+.main-weather {
+    background-image: "../../assets/{datosHome.condiciones}.jpg";
+}

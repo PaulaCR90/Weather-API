@@ -1,0 +1,15 @@
+export const citiesCoords = {
+  Berlín: { lat: 52.5244, long: 13.4105 },
+  Bogotá: { lat: 4.6097, long: -74.0817 },
+  Denver: { lat: 39.7392, long: -104.9847 },
+  Estocolmo: { lat: 59.3326, long: 18.0649 },
+  Helsinki: { lat: 60.1695, long: 24.9355 },
+  Lisboa: { lat: 38.7167, long: -9.1333 },
+  Oslo: { lat: 59.9127, long: 10.7461 },
+  Palermo: { lat: 37.8167, long: 13.5833 },
+  Río: { lat: -22.9028, long: -43.2075 },
+  Tokio: { lat: 35.6895, long: 139.6917 },
+  Manila: { lat: 14.6042, long: 120.9822 },
+  Marsella: { lat: 43.297, long: 5.3811 },
+  Nairobi: { lat: -1.2833, long: 36.8167 },
+};
