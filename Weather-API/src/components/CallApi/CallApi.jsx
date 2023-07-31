@@ -28,15 +28,15 @@ const CallApi = () => {
   }, [location]);
 
   useEffect(() => {
-    if (location) {
+   // if (location) {
       const API_KEY = "3475019ae4481bceaf9ea6dd818241fe";
       const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`;
       const API_URL_fiveDays = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`;
       axios.get(API_URL).then((res) => setApiInfo(res));
       axios.get(API_URL_fiveDays).then((res) => setApiFiveDays(res));
-    } else {
-        return alert('Oops! An error occurred.\nPlease, reload or try again later.')
-    }
+    // } else {
+    //     return alert('Oops! An error occurred.\nPlease, reload or try again later.')
+    // }
   }, [location]);
 };
 

@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>      
-      {/* <CallApi /> */}
+      <CallApi />
       <Header tabletOrLess={tabletOrLess} />
       <Home />
       <Footer />
