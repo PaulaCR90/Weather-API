@@ -4,6 +4,7 @@ import Weather from "../components/Weather/Weather";
 import WeatherFive from "../components/WeatherFive/WeatherFive";
 import Spinner from "../components/Spinner/Spinner";
 import { ApiContext } from "../context/ApiContext";
+import CallApi from "../components/CallApi/CallApi";
 
 const Home = () => {
   const { apiInfo } = useContext(ApiContext);
@@ -11,13 +12,13 @@ const Home = () => {
     <>
       {apiInfo ? (
         <main>
-          <Weather />
-          <WeatherFive />
+            <>
+              <Weather />
+              <WeatherFive />
+            </>     
         </main>
       ) : (
-        <main>
-          {/* <Spinner /> */}
-        </main>
+        <main><Spinner /></main>
       )}
     </>
   );

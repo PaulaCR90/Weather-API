@@ -1,991 +1,1514 @@
-const initiaResponse = {
-  coord: { lon: -1.4156, lat: 38.9382 },
-  weather: [
-    { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
+const initialResponse = {
+  "coord": {
+      "lon": -1.4437,
+      "lat": 38.9644
+  },
+  "weather": [
+      {
+          "id": 800,
+          "main": "Clear",
+          "description": "cielo claro",
+          "icon": "01d"
+      }
   ],
-  base: "stations",
-  main: {
-    temp: 17.27,
-    feels_like: 16.83,
-    temp_min: 17.27,
-    temp_max: 17.27,
-    pressure: 1018,
-    humidity: 68,
-    sea_level: 1018,
-    grnd_level: 911,
+  "base": "stations",
+  "main": {
+      "temp": 19.96,
+      "feels_like": 19.47,
+      "temp_min": 19.96,
+      "temp_max": 21.12,
+      "pressure": 1018,
+      "humidity": 56,
+      "sea_level": 1018,
+      "grnd_level": 907
   },
-  visibility: 10000,
-  wind: { speed: 2.78, deg: 130, gust: 2.92 },
-  clouds: { all: 4 },
-  dt: 1690356623,
-  sys: {
-    type: 1,
-    id: 6390,
-    country: "ES",
-    sunrise: 1690347647,
-    sunset: 1690399398,
+  "visibility": 10000,
+  "wind": {
+      "speed": 1.06,
+      "deg": 223,
+      "gust": 1.54
   },
-  timezone: 7200,
-  id: 6355330,
-  name: "Higueruela",
-  cod: 200,
+  "clouds": {
+      "all": 0
+  },
+  "dt": 1690787121,
+  "sys": {
+      "type": 1,
+      "id": 6390,
+      "country": "ES",
+      "sunrise": 1690779912,
+      "sunset": 1690831139
+  },
+  "timezone": 7200,
+  "id": 2516713,
+  "name": "Higueruela",
+  "cod": 200
 };
 
 //* Cinco horas por día, cinco días consecutivos.
 const fiveDaysResponse = {
-  cod: "200",
-  message: 0,
-  cnt: 40,
-  list: [
-    {
-      dt: 1690362000,
-      main: {
-        temp: 17.27,
-        feels_like: 16.59,
-        temp_min: 17.27,
-        temp_max: 23.03,
-        pressure: 1018,
-        sea_level: 1018,
-        grnd_level: 912,
-        humidity: 59,
-        temp_kf: -5.76,
+  "cod": "200",
+  "message": 0,
+  "cnt": 40,
+  "list": [
+      {
+          "dt": 1690794000,
+          "main": {
+              "temp": 22.5,
+              "feels_like": 22.32,
+              "temp_min": 22.5,
+              "temp_max": 27.58,
+              "pressure": 1018,
+              "sea_level": 1018,
+              "grnd_level": 908,
+              "humidity": 58,
+              "temp_kf": -5.08
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 3
+          },
+          "wind": {
+              "speed": 2.22,
+              "deg": 260,
+              "gust": 2.81
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-07-31 09:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 3 },
-      wind: { speed: 3.29, deg: 148, gust: 3.25 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-26 09:00:00",
-    },
-    {
-      dt: 1690372800,
-      main: {
-        temp: 20.85,
-        feels_like: 20.32,
-        temp_min: 20.85,
-        temp_max: 28,
-        pressure: 1017,
-        sea_level: 1017,
-        grnd_level: 912,
-        humidity: 51,
-        temp_kf: -7.15,
+      {
+          "dt": 1690804800,
+          "main": {
+              "temp": 28,
+              "feels_like": 27.53,
+              "temp_min": 28,
+              "temp_max": 32.02,
+              "pressure": 1017,
+              "sea_level": 1017,
+              "grnd_level": 908,
+              "humidity": 38,
+              "temp_kf": -4.02
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 1
+          },
+          "wind": {
+              "speed": 3.31,
+              "deg": 253,
+              "gust": 4.87
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-07-31 12:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 3 },
-      wind: { speed: 4.1, deg: 181, gust: 3.85 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-26 12:00:00",
-    },
-    {
-      dt: 1690383600,
-      main: {
-        temp: 25.97,
-        feels_like: 25.97,
-        temp_min: 25.97,
-        temp_max: 30.32,
-        pressure: 1015,
-        sea_level: 1015,
-        grnd_level: 911,
-        humidity: 39,
-        temp_kf: -4.35,
+      {
+          "dt": 1690815600,
+          "main": {
+              "temp": 35.18,
+              "feels_like": 32.75,
+              "temp_min": 35.18,
+              "temp_max": 35.18,
+              "pressure": 1013,
+              "sea_level": 1013,
+              "grnd_level": 907,
+              "humidity": 15,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 5.17,
+              "deg": 262,
+              "gust": 7.2
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-07-31 15:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 1 },
-      wind: { speed: 5.32, deg: 197, gust: 4.62 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-26 15:00:00",
-    },
-    {
-      dt: 1690394400,
-      main: {
-        temp: 27.95,
-        feels_like: 27.76,
-        temp_min: 27.95,
-        temp_max: 27.95,
-        pressure: 1014,
-        sea_level: 1014,
-        grnd_level: 910,
-        humidity: 42,
-        temp_kf: 0,
+      {
+          "dt": 1690826400,
+          "main": {
+              "temp": 33.41,
+              "feels_like": 31.28,
+              "temp_min": 33.41,
+              "temp_max": 33.41,
+              "pressure": 1012,
+              "sea_level": 1012,
+              "grnd_level": 906,
+              "humidity": 19,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 4.74,
+              "deg": 252,
+              "gust": 7.32
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-07-31 18:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 1 },
-      wind: { speed: 6.94, deg: 176, gust: 5.47 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-26 18:00:00",
-    },
-    {
-      dt: 1690405200,
-      main: {
-        temp: 21.32,
-        feels_like: 21.54,
-        temp_min: 21.32,
-        temp_max: 21.32,
-        pressure: 1017,
-        sea_level: 1017,
-        grnd_level: 911,
-        humidity: 78,
-        temp_kf: 0,
+      {
+          "dt": 1690837200,
+          "main": {
+              "temp": 25.69,
+              "feels_like": 25.62,
+              "temp_min": 25.69,
+              "temp_max": 25.69,
+              "pressure": 1015,
+              "sea_level": 1015,
+              "grnd_level": 905,
+              "humidity": 50,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 801,
+                  "main": "Clouds",
+                  "description": "algo de nubes",
+                  "icon": "02n"
+              }
+          ],
+          "clouds": {
+              "all": 11
+          },
+          "wind": {
+              "speed": 3.14,
+              "deg": 198,
+              "gust": 3.63
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "n"
+          },
+          "dt_txt": "2023-07-31 21:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01n" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 6.08, deg: 155, gust: 8.54 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "n" },
-      dt_txt: "2023-07-26 21:00:00",
-    },
-    {
-      dt: 1690416000,
-      main: {
-        temp: 19.61,
-        feels_like: 19.92,
-        temp_min: 19.61,
-        temp_max: 19.61,
-        pressure: 1017,
-        sea_level: 1017,
-        grnd_level: 910,
-        humidity: 88,
-        temp_kf: 0,
+      {
+          "dt": 1690848000,
+          "main": {
+              "temp": 23.01,
+              "feels_like": 22.54,
+              "temp_min": 23.01,
+              "temp_max": 23.01,
+              "pressure": 1015,
+              "sea_level": 1015,
+              "grnd_level": 904,
+              "humidity": 45,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01n"
+              }
+          ],
+          "clouds": {
+              "all": 6
+          },
+          "wind": {
+              "speed": 3.09,
+              "deg": 233,
+              "gust": 3.12
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "n"
+          },
+          "dt_txt": "2023-08-01 00:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01n" },
-      ],
-      clouds: { all: 1 },
-      wind: { speed: 3.54, deg: 144, gust: 5.6 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "n" },
-      dt_txt: "2023-07-27 00:00:00",
-    },
-    {
-      dt: 1690426800,
-      main: {
-        temp: 18.16,
-        feels_like: 18.49,
-        temp_min: 18.16,
-        temp_max: 18.16,
-        pressure: 1016,
-        sea_level: 1016,
-        grnd_level: 909,
-        humidity: 94,
-        temp_kf: 0,
+      {
+          "dt": 1690858800,
+          "main": {
+              "temp": 21.56,
+              "feels_like": 20.16,
+              "temp_min": 21.56,
+              "temp_max": 21.56,
+              "pressure": 1014,
+              "sea_level": 1014,
+              "grnd_level": 903,
+              "humidity": 15,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01n"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 3.16,
+              "deg": 285,
+              "gust": 3.81
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "n"
+          },
+          "dt_txt": "2023-08-01 03:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01n" },
-      ],
-      clouds: { all: 2 },
-      wind: { speed: 2.55, deg: 141, gust: 3.59 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "n" },
-      dt_txt: "2023-07-27 03:00:00",
-    },
-    {
-      dt: 1690437600,
-      main: {
-        temp: 18.33,
-        feels_like: 18.59,
-        temp_min: 18.33,
-        temp_max: 18.33,
-        pressure: 1017,
-        sea_level: 1017,
-        grnd_level: 910,
-        humidity: 91,
-        temp_kf: 0,
+      {
+          "dt": 1690869600,
+          "main": {
+              "temp": 20.68,
+              "feels_like": 19.4,
+              "temp_min": 20.68,
+              "temp_max": 20.68,
+              "pressure": 1015,
+              "sea_level": 1015,
+              "grnd_level": 904,
+              "humidity": 23,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 3.48,
+              "deg": 281,
+              "gust": 6.24
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-01 06:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 5 },
-      wind: { speed: 2.36, deg: 148, gust: 4.53 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-27 06:00:00",
-    },
-    {
-      dt: 1690448400,
-      main: {
-        temp: 24.06,
-        feels_like: 23.83,
-        temp_min: 24.06,
-        temp_max: 24.06,
-        pressure: 1016,
-        sea_level: 1016,
-        grnd_level: 911,
-        humidity: 50,
-        temp_kf: 0,
+      {
+          "dt": 1690880400,
+          "main": {
+              "temp": 27.27,
+              "feels_like": 26.23,
+              "temp_min": 27.27,
+              "temp_max": 27.27,
+              "pressure": 1015,
+              "sea_level": 1015,
+              "grnd_level": 906,
+              "humidity": 19,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 7.2,
+              "deg": 301,
+              "gust": 8.3
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-01 09:00:00"
       },
-      weather: [
-        {
-          id: 802,
-          main: "Clouds",
-          description: "nubes dispersas",
-          icon: "03d",
-        },
-      ],
-      clouds: { all: 37 },
-      wind: { speed: 3.42, deg: 181, gust: 3.74 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-27 09:00:00",
-    },
-    {
-      dt: 1690459200,
-      main: {
-        temp: 28.54,
-        feels_like: 27.73,
-        temp_min: 28.54,
-        temp_max: 28.54,
-        pressure: 1015,
-        sea_level: 1015,
-        grnd_level: 911,
-        humidity: 34,
-        temp_kf: 0,
+      {
+          "dt": 1690891200,
+          "main": {
+              "temp": 32.2,
+              "feels_like": 29.95,
+              "temp_min": 32.2,
+              "temp_max": 32.2,
+              "pressure": 1013,
+              "sea_level": 1013,
+              "grnd_level": 906,
+              "humidity": 14,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 5.68,
+              "deg": 297,
+              "gust": 5.01
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-01 12:00:00"
       },
-      weather: [
-        {
-          id: 802,
-          main: "Clouds",
-          description: "nubes dispersas",
-          icon: "03d",
-        },
-      ],
-      clouds: { all: 38 },
-      wind: { speed: 6.04, deg: 193, gust: 6.34 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-27 12:00:00",
-    },
-    {
-      dt: 1690470000,
-      main: {
-        temp: 30.31,
-        feels_like: 29.3,
-        temp_min: 30.31,
-        temp_max: 30.31,
-        pressure: 1012,
-        sea_level: 1012,
-        grnd_level: 909,
-        humidity: 33,
-        temp_kf: 0,
+      {
+          "dt": 1690902000,
+          "main": {
+              "temp": 34.21,
+              "feels_like": 31.66,
+              "temp_min": 34.21,
+              "temp_max": 34.21,
+              "pressure": 1011,
+              "sea_level": 1011,
+              "grnd_level": 905,
+              "humidity": 11,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 6.06,
+              "deg": 287,
+              "gust": 6.66
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-01 15:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 5.36, deg: 200, gust: 6.27 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-27 15:00:00",
-    },
-    {
-      dt: 1690480800,
-      main: {
-        temp: 29.43,
-        feels_like: 28.68,
-        temp_min: 29.43,
-        temp_max: 29.43,
-        pressure: 1011,
-        sea_level: 1011,
-        grnd_level: 908,
-        humidity: 36,
-        temp_kf: 0,
+      {
+          "dt": 1690912800,
+          "main": {
+              "temp": 32.61,
+              "feels_like": 30.28,
+              "temp_min": 32.61,
+              "temp_max": 32.61,
+              "pressure": 1011,
+              "sea_level": 1011,
+              "grnd_level": 904,
+              "humidity": 12,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 6.42,
+              "deg": 294,
+              "gust": 6.86
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-01 18:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 6 },
-      wind: { speed: 6.91, deg: 191, gust: 6.68 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-27 18:00:00",
-    },
-    {
-      dt: 1690491600,
-      main: {
-        temp: 23.57,
-        feels_like: 23.6,
-        temp_min: 23.57,
-        temp_max: 23.57,
-        pressure: 1014,
-        sea_level: 1014,
-        grnd_level: 909,
-        humidity: 62,
-        temp_kf: 0,
+      {
+          "dt": 1690923600,
+          "main": {
+              "temp": 24.2,
+              "feels_like": 23.43,
+              "temp_min": 24.2,
+              "temp_max": 24.2,
+              "pressure": 1013,
+              "sea_level": 1013,
+              "grnd_level": 903,
+              "humidity": 29,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01n"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 0.19,
+              "deg": 232,
+              "gust": 2.1
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "n"
+          },
+          "dt_txt": "2023-08-01 21:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01n" },
-      ],
-      clouds: { all: 1 },
-      wind: { speed: 4.35, deg: 203, gust: 6.8 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "n" },
-      dt_txt: "2023-07-27 21:00:00",
-    },
-    {
-      dt: 1690502400,
-      main: {
-        temp: 21.48,
-        feels_like: 21.35,
-        temp_min: 21.48,
-        temp_max: 21.48,
-        pressure: 1014,
-        sea_level: 1014,
-        grnd_level: 908,
-        humidity: 64,
-        temp_kf: 0,
+      {
+          "dt": 1690934400,
+          "main": {
+              "temp": 21.92,
+              "feels_like": 21.63,
+              "temp_min": 21.92,
+              "temp_max": 21.92,
+              "pressure": 1013,
+              "sea_level": 1013,
+              "grnd_level": 903,
+              "humidity": 56,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01n"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 2.63,
+              "deg": 183,
+              "gust": 2.62
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "n"
+          },
+          "dt_txt": "2023-08-02 00:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01n" },
-      ],
-      clouds: { all: 1 },
-      wind: { speed: 2.75, deg: 234, gust: 2.78 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "n" },
-      dt_txt: "2023-07-28 00:00:00",
-    },
-    {
-      dt: 1690513200,
-      main: {
-        temp: 19.76,
-        feels_like: 19.12,
-        temp_min: 19.76,
-        temp_max: 19.76,
-        pressure: 1014,
-        sea_level: 1014,
-        grnd_level: 908,
-        humidity: 51,
-        temp_kf: 0,
+      {
+          "dt": 1690945200,
+          "main": {
+              "temp": 20.11,
+              "feels_like": 19.61,
+              "temp_min": 20.11,
+              "temp_max": 20.11,
+              "pressure": 1012,
+              "sea_level": 1012,
+              "grnd_level": 901,
+              "humidity": 55,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01n"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 1.66,
+              "deg": 240,
+              "gust": 1.74
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "n"
+          },
+          "dt_txt": "2023-08-02 03:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01n" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 2.44, deg: 241, gust: 2.51 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "n" },
-      dt_txt: "2023-07-28 03:00:00",
-    },
-    {
-      dt: 1690524000,
-      main: {
-        temp: 20.84,
-        feels_like: 19.76,
-        temp_min: 20.84,
-        temp_max: 20.84,
-        pressure: 1015,
-        sea_level: 1015,
-        grnd_level: 908,
-        humidity: 30,
-        temp_kf: 0,
+      {
+          "dt": 1690956000,
+          "main": {
+              "temp": 21.13,
+              "feels_like": 20.11,
+              "temp_min": 21.13,
+              "temp_max": 21.13,
+              "pressure": 1013,
+              "sea_level": 1013,
+              "grnd_level": 902,
+              "humidity": 31,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 1.53,
+              "deg": 293,
+              "gust": 1.68
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-02 06:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 1.78, deg: 326, gust: 1.82 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-28 06:00:00",
-    },
-    {
-      dt: 1690534800,
-      main: {
-        temp: 27.4,
-        feels_like: 26.29,
-        temp_min: 27.4,
-        temp_max: 27.4,
-        pressure: 1015,
-        sea_level: 1015,
-        grnd_level: 911,
-        humidity: 18,
-        temp_kf: 0,
+      {
+          "dt": 1690966800,
+          "main": {
+              "temp": 28.19,
+              "feels_like": 26.9,
+              "temp_min": 28.19,
+              "temp_max": 28.19,
+              "pressure": 1012,
+              "sea_level": 1012,
+              "grnd_level": 904,
+              "humidity": 21,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 4.04,
+              "deg": 280,
+              "gust": 5.38
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-02 09:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 1.52, deg: 356, gust: 1.15 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-28 09:00:00",
-    },
-    {
-      dt: 1690545600,
-      main: {
-        temp: 32.07,
-        feels_like: 29.88,
-        temp_min: 32.07,
-        temp_max: 32.07,
-        pressure: 1013,
-        sea_level: 1013,
-        grnd_level: 911,
-        humidity: 16,
-        temp_kf: 0,
+      {
+          "dt": 1690977600,
+          "main": {
+              "temp": 33.57,
+              "feels_like": 31.25,
+              "temp_min": 33.57,
+              "temp_max": 33.57,
+              "pressure": 1010,
+              "sea_level": 1010,
+              "grnd_level": 904,
+              "humidity": 16,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 6,
+              "deg": 276,
+              "gust": 7.17
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-02 12:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 3.8, deg: 176, gust: 4.76 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-28 12:00:00",
-    },
-    {
-      dt: 1690556400,
-      main: {
-        temp: 33.46,
-        feels_like: 31.4,
-        temp_min: 33.46,
-        temp_max: 33.46,
-        pressure: 1011,
-        sea_level: 1011,
-        grnd_level: 909,
-        humidity: 20,
-        temp_kf: 0,
+      {
+          "dt": 1690988400,
+          "main": {
+              "temp": 35.2,
+              "feels_like": 32.59,
+              "temp_min": 35.2,
+              "temp_max": 35.2,
+              "pressure": 1008,
+              "sea_level": 1008,
+              "grnd_level": 902,
+              "humidity": 12,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 8.05,
+              "deg": 277,
+              "gust": 8.99
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-02 15:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 5.58, deg: 187, gust: 5.93 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-28 15:00:00",
-    },
-    {
-      dt: 1690567200,
-      main: {
-        temp: 31.88,
-        feels_like: 30.37,
-        temp_min: 31.88,
-        temp_max: 31.88,
-        pressure: 1011,
-        sea_level: 1011,
-        grnd_level: 908,
-        humidity: 27,
-        temp_kf: 0,
+      {
+          "dt": 1690999200,
+          "main": {
+              "temp": 33.33,
+              "feels_like": 30.95,
+              "temp_min": 33.33,
+              "temp_max": 33.33,
+              "pressure": 1008,
+              "sea_level": 1008,
+              "grnd_level": 901,
+              "humidity": 14,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 7.55,
+              "deg": 296,
+              "gust": 9.35
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-02 18:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 5.08, deg: 178, gust: 4.1 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-28 18:00:00",
-    },
-    {
-      dt: 1690578000,
-      main: {
-        temp: 24.69,
-        feels_like: 24.76,
-        temp_min: 24.69,
-        temp_max: 24.69,
-        pressure: 1014,
-        sea_level: 1014,
-        grnd_level: 909,
-        humidity: 59,
-        temp_kf: 0,
+      {
+          "dt": 1691010000,
+          "main": {
+              "temp": 26.44,
+              "feels_like": 26.44,
+              "temp_min": 26.44,
+              "temp_max": 26.44,
+              "pressure": 1010,
+              "sea_level": 1010,
+              "grnd_level": 901,
+              "humidity": 22,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01n"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 3.96,
+              "deg": 277,
+              "gust": 8.83
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "n"
+          },
+          "dt_txt": "2023-08-02 21:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01n" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 4.83, deg: 149, gust: 7.32 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "n" },
-      dt_txt: "2023-07-28 21:00:00",
-    },
-    {
-      dt: 1690588800,
-      main: {
-        temp: 21.93,
-        feels_like: 22.11,
-        temp_min: 21.93,
-        temp_max: 21.93,
-        pressure: 1014,
-        sea_level: 1014,
-        grnd_level: 908,
-        humidity: 74,
-        temp_kf: 0,
+      {
+          "dt": 1691020800,
+          "main": {
+              "temp": 23.8,
+              "feels_like": 22.97,
+              "temp_min": 23.8,
+              "temp_max": 23.8,
+              "pressure": 1011,
+              "sea_level": 1011,
+              "grnd_level": 901,
+              "humidity": 28,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01n"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 3.64,
+              "deg": 248,
+              "gust": 4.23
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "n"
+          },
+          "dt_txt": "2023-08-03 00:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01n" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 3.42, deg: 148, gust: 5.28 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "n" },
-      dt_txt: "2023-07-29 00:00:00",
-    },
-    {
-      dt: 1690599600,
-      main: {
-        temp: 20.16,
-        feels_like: 20.29,
-        temp_min: 20.16,
-        temp_max: 20.16,
-        pressure: 1013,
-        sea_level: 1013,
-        grnd_level: 907,
-        humidity: 79,
-        temp_kf: 0,
+      {
+          "dt": 1691031600,
+          "main": {
+              "temp": 21.36,
+              "feels_like": 20.47,
+              "temp_min": 21.36,
+              "temp_max": 21.36,
+              "pressure": 1011,
+              "sea_level": 1011,
+              "grnd_level": 900,
+              "humidity": 35,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01n"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 4.1,
+              "deg": 275,
+              "gust": 5.37
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "n"
+          },
+          "dt_txt": "2023-08-03 03:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01n" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 2.25, deg: 160, gust: 2.59 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "n" },
-      dt_txt: "2023-07-29 03:00:00",
-    },
-    {
-      dt: 1690610400,
-      main: {
-        temp: 21.4,
-        feels_like: 21.24,
-        temp_min: 21.4,
-        temp_max: 21.4,
-        pressure: 1014,
-        sea_level: 1014,
-        grnd_level: 908,
-        humidity: 63,
-        temp_kf: 0,
+      {
+          "dt": 1691042400,
+          "main": {
+              "temp": 20.63,
+              "feels_like": 19.92,
+              "temp_min": 20.63,
+              "temp_max": 20.63,
+              "pressure": 1012,
+              "sea_level": 1012,
+              "grnd_level": 901,
+              "humidity": 45,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 2.81,
+              "deg": 291,
+              "gust": 4.61
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-03 06:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 1 },
-      wind: { speed: 1.02, deg: 229, gust: 1.21 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-29 06:00:00",
-    },
-    {
-      dt: 1690621200,
-      main: {
-        temp: 28.11,
-        feels_like: 26.93,
-        temp_min: 28.11,
-        temp_max: 28.11,
-        pressure: 1014,
-        sea_level: 1014,
-        grnd_level: 910,
-        humidity: 24,
-        temp_kf: 0,
+      {
+          "dt": 1691053200,
+          "main": {
+              "temp": 25.87,
+              "feels_like": 25.56,
+              "temp_min": 25.87,
+              "temp_max": 25.87,
+              "pressure": 1012,
+              "sea_level": 1012,
+              "grnd_level": 903,
+              "humidity": 40,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 3.43,
+              "deg": 291,
+              "gust": 4.16
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-03 09:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 1.96, deg: 232, gust: 2.55 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-29 09:00:00",
-    },
-    {
-      dt: 1690632000,
-      main: {
-        temp: 32.75,
-        feels_like: 30.53,
-        temp_min: 32.75,
-        temp_max: 32.75,
-        pressure: 1012,
-        sea_level: 1012,
-        grnd_level: 910,
-        humidity: 17,
-        temp_kf: 0,
+      {
+          "dt": 1691064000,
+          "main": {
+              "temp": 30.82,
+              "feels_like": 29.17,
+              "temp_min": 30.82,
+              "temp_max": 30.82,
+              "pressure": 1011,
+              "sea_level": 1011,
+              "grnd_level": 904,
+              "humidity": 25,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 0
+          },
+          "wind": {
+              "speed": 4.75,
+              "deg": 283,
+              "gust": 6.21
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-03 12:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 3.41, deg: 236, gust: 5.4 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-29 12:00:00",
-    },
-    {
-      dt: 1690642800,
-      main: {
-        temp: 35.88,
-        feels_like: 33.29,
-        temp_min: 35.88,
-        temp_max: 35.88,
-        pressure: 1010,
-        sea_level: 1010,
-        grnd_level: 909,
-        humidity: 13,
-        temp_kf: 0,
+      {
+          "dt": 1691074800,
+          "main": {
+              "temp": 32.68,
+              "feels_like": 30.77,
+              "temp_min": 32.68,
+              "temp_max": 32.68,
+              "pressure": 1010,
+              "sea_level": 1010,
+              "grnd_level": 903,
+              "humidity": 22,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "cielo claro",
+                  "icon": "01d"
+              }
+          ],
+          "clouds": {
+              "all": 2
+          },
+          "wind": {
+              "speed": 3.6,
+              "deg": 294,
+              "gust": 8
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-03 15:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 5.2, deg: 244, gust: 8.82 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-29 15:00:00",
-    },
-    {
-      dt: 1690653600,
-      main: {
-        temp: 34.31,
-        feels_like: 31.9,
-        temp_min: 34.31,
-        temp_max: 34.31,
-        pressure: 1011,
-        sea_level: 1011,
-        grnd_level: 909,
-        humidity: 15,
-        temp_kf: 0,
+      {
+          "dt": 1691085600,
+          "main": {
+              "temp": 25.52,
+              "feels_like": 25.41,
+              "temp_min": 25.52,
+              "temp_max": 25.52,
+              "pressure": 1012,
+              "sea_level": 1012,
+              "grnd_level": 903,
+              "humidity": 49,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 802,
+                  "main": "Clouds",
+                  "description": "nubes dispersas",
+                  "icon": "03d"
+              }
+          ],
+          "clouds": {
+              "all": 28
+          },
+          "wind": {
+              "speed": 7.81,
+              "deg": 155,
+              "gust": 7.85
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-03 18:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 5.17, deg: 246, gust: 7.86 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-29 18:00:00",
-    },
-    {
-      dt: 1690664400,
-      main: {
-        temp: 27.66,
-        feels_like: 26.7,
-        temp_min: 27.66,
-        temp_max: 27.66,
-        pressure: 1014,
-        sea_level: 1014,
-        grnd_level: 910,
-        humidity: 26,
-        temp_kf: 0,
+      {
+          "dt": 1691096400,
+          "main": {
+              "temp": 20.35,
+              "feels_like": 20.4,
+              "temp_min": 20.35,
+              "temp_max": 20.35,
+              "pressure": 1015,
+              "sea_level": 1015,
+              "grnd_level": 904,
+              "humidity": 75,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 802,
+                  "main": "Clouds",
+                  "description": "nubes dispersas",
+                  "icon": "03n"
+              }
+          ],
+          "clouds": {
+              "all": 35
+          },
+          "wind": {
+              "speed": 5.32,
+              "deg": 136,
+              "gust": 7.62
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "n"
+          },
+          "dt_txt": "2023-08-03 21:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01n" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 3.03, deg: 252, gust: 3.33 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "n" },
-      dt_txt: "2023-07-29 21:00:00",
-    },
-    {
-      dt: 1690675200,
-      main: {
-        temp: 24.59,
-        feels_like: 23.63,
-        temp_min: 24.59,
-        temp_max: 24.59,
-        pressure: 1015,
-        sea_level: 1015,
-        grnd_level: 910,
-        humidity: 20,
-        temp_kf: 0,
+      {
+          "dt": 1691107200,
+          "main": {
+              "temp": 19.16,
+              "feels_like": 19.32,
+              "temp_min": 19.16,
+              "temp_max": 19.16,
+              "pressure": 1016,
+              "sea_level": 1016,
+              "grnd_level": 904,
+              "humidity": 84,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 802,
+                  "main": "Clouds",
+                  "description": "nubes dispersas",
+                  "icon": "03n"
+              }
+          ],
+          "clouds": {
+              "all": 38
+          },
+          "wind": {
+              "speed": 5.08,
+              "deg": 99,
+              "gust": 6.5
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "n"
+          },
+          "dt_txt": "2023-08-04 00:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01n" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 3.2, deg: 285, gust: 3.35 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "n" },
-      dt_txt: "2023-07-30 00:00:00",
-    },
-    {
-      dt: 1690686000,
-      main: {
-        temp: 22.53,
-        feels_like: 21.54,
-        temp_min: 22.53,
-        temp_max: 22.53,
-        pressure: 1015,
-        sea_level: 1015,
-        grnd_level: 909,
-        humidity: 27,
-        temp_kf: 0,
+      {
+          "dt": 1691118000,
+          "main": {
+              "temp": 19.05,
+              "feels_like": 19.05,
+              "temp_min": 19.05,
+              "temp_max": 19.05,
+              "pressure": 1016,
+              "sea_level": 1016,
+              "grnd_level": 904,
+              "humidity": 78,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 500,
+                  "main": "Rain",
+                  "description": "lluvia ligera",
+                  "icon": "10n"
+              }
+          ],
+          "clouds": {
+              "all": 100
+          },
+          "wind": {
+              "speed": 5.7,
+              "deg": 92,
+              "gust": 6.22
+          },
+          "visibility": 10000,
+          "pop": 0.38,
+          "rain": {
+              "3h": 0.24
+          },
+          "sys": {
+              "pod": "n"
+          },
+          "dt_txt": "2023-08-04 03:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01n" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 3.19, deg: 310, gust: 4.09 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "n" },
-      dt_txt: "2023-07-30 03:00:00",
-    },
-    {
-      dt: 1690696800,
-      main: {
-        temp: 22.43,
-        feels_like: 21.62,
-        temp_min: 22.43,
-        temp_max: 22.43,
-        pressure: 1016,
-        sea_level: 1016,
-        grnd_level: 911,
-        humidity: 34,
-        temp_kf: 0,
+      {
+          "dt": 1691128800,
+          "main": {
+              "temp": 18.19,
+              "feels_like": 18.13,
+              "temp_min": 18.19,
+              "temp_max": 18.19,
+              "pressure": 1018,
+              "sea_level": 1018,
+              "grnd_level": 905,
+              "humidity": 79,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 500,
+                  "main": "Rain",
+                  "description": "lluvia ligera",
+                  "icon": "10d"
+              }
+          ],
+          "clouds": {
+              "all": 100
+          },
+          "wind": {
+              "speed": 3.53,
+              "deg": 70,
+              "gust": 3.48
+          },
+          "visibility": 10000,
+          "pop": 0.21,
+          "rain": {
+              "3h": 0.1
+          },
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-04 06:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 1.66, deg: 302, gust: 2.23 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-30 06:00:00",
-    },
-    {
-      dt: 1690707600,
-      main: {
-        temp: 28.14,
-        feels_like: 27.03,
-        temp_min: 28.14,
-        temp_max: 28.14,
-        pressure: 1017,
-        sea_level: 1017,
-        grnd_level: 913,
-        humidity: 26,
-        temp_kf: 0,
+      {
+          "dt": 1691139600,
+          "main": {
+              "temp": 18.81,
+              "feels_like": 18.65,
+              "temp_min": 18.81,
+              "temp_max": 18.81,
+              "pressure": 1019,
+              "sea_level": 1019,
+              "grnd_level": 907,
+              "humidity": 73,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 804,
+                  "main": "Clouds",
+                  "description": "nubes",
+                  "icon": "04d"
+              }
+          ],
+          "clouds": {
+              "all": 100
+          },
+          "wind": {
+              "speed": 1.71,
+              "deg": 55,
+              "gust": 1.19
+          },
+          "visibility": 10000,
+          "pop": 0.07,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-04 09:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 0.83, deg: 352, gust: 1.45 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-30 09:00:00",
-    },
-    {
-      dt: 1690718400,
-      main: {
-        temp: 32.5,
-        feels_like: 30.34,
-        temp_min: 32.5,
-        temp_max: 32.5,
-        pressure: 1016,
-        sea_level: 1016,
-        grnd_level: 914,
-        humidity: 18,
-        temp_kf: 0,
+      {
+          "dt": 1691150400,
+          "main": {
+              "temp": 23.41,
+              "feels_like": 23.16,
+              "temp_min": 23.41,
+              "temp_max": 23.41,
+              "pressure": 1019,
+              "sea_level": 1019,
+              "grnd_level": 908,
+              "humidity": 52,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 804,
+                  "main": "Clouds",
+                  "description": "nubes",
+                  "icon": "04d"
+              }
+          ],
+          "clouds": {
+              "all": 92
+          },
+          "wind": {
+              "speed": 2.03,
+              "deg": 262,
+              "gust": 3.15
+          },
+          "visibility": 10000,
+          "pop": 0.07,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-04 12:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 2.34, deg: 245, gust: 5.33 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-30 12:00:00",
-    },
-    {
-      dt: 1690729200,
-      main: {
-        temp: 34.96,
-        feels_like: 32.69,
-        temp_min: 34.96,
-        temp_max: 34.96,
-        pressure: 1014,
-        sea_level: 1014,
-        grnd_level: 912,
-        humidity: 17,
-        temp_kf: 0,
+      {
+          "dt": 1691161200,
+          "main": {
+              "temp": 27.25,
+              "feels_like": 26.66,
+              "temp_min": 27.25,
+              "temp_max": 27.25,
+              "pressure": 1017,
+              "sea_level": 1017,
+              "grnd_level": 907,
+              "humidity": 32,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 802,
+                  "main": "Clouds",
+                  "description": "nubes dispersas",
+                  "icon": "03d"
+              }
+          ],
+          "clouds": {
+              "all": 41
+          },
+          "wind": {
+              "speed": 3.3,
+              "deg": 279,
+              "gust": 4.93
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-04 15:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 4.07, deg: 170, gust: 7.29 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-30 15:00:00",
-    },
-    {
-      dt: 1690740000,
-      main: {
-        temp: 29.45,
-        feels_like: 29.62,
-        temp_min: 29.45,
-        temp_max: 29.45,
-        pressure: 1015,
-        sea_level: 1015,
-        grnd_level: 912,
-        humidity: 45,
-        temp_kf: 0,
+      {
+          "dt": 1691172000,
+          "main": {
+              "temp": 27.5,
+              "feels_like": 26.43,
+              "temp_min": 27.5,
+              "temp_max": 27.5,
+              "pressure": 1016,
+              "sea_level": 1016,
+              "grnd_level": 907,
+              "humidity": 21,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 802,
+                  "main": "Clouds",
+                  "description": "nubes dispersas",
+                  "icon": "03d"
+              }
+          ],
+          "clouds": {
+              "all": 41
+          },
+          "wind": {
+              "speed": 3.89,
+              "deg": 290,
+              "gust": 6.39
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-04 18:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01d" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 8.2, deg: 172, gust: 8.23 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-30 18:00:00",
-    },
-    {
-      dt: 1690750800,
-      main: {
-        temp: 23.29,
-        feels_like: 23.69,
-        temp_min: 23.29,
-        temp_max: 23.29,
-        pressure: 1018,
-        sea_level: 1018,
-        grnd_level: 912,
-        humidity: 77,
-        temp_kf: 0,
+      {
+          "dt": 1691182800,
+          "main": {
+              "temp": 18.12,
+              "feels_like": 17.71,
+              "temp_min": 18.12,
+              "temp_max": 18.12,
+              "pressure": 1021,
+              "sea_level": 1021,
+              "grnd_level": 908,
+              "humidity": 66,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 802,
+                  "main": "Clouds",
+                  "description": "nubes dispersas",
+                  "icon": "03n"
+              }
+          ],
+          "clouds": {
+              "all": 35
+          },
+          "wind": {
+              "speed": 3.01,
+              "deg": 125,
+              "gust": 4.48
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "n"
+          },
+          "dt_txt": "2023-08-04 21:00:00"
       },
-      weather: [
-        { id: 800, main: "Clear", description: "cielo claro", icon: "01n" },
-      ],
-      clouds: { all: 0 },
-      wind: { speed: 4.87, deg: 139, gust: 7.26 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "n" },
-      dt_txt: "2023-07-30 21:00:00",
-    },
-    {
-      dt: 1690761600,
-      main: {
-        temp: 21.06,
-        feels_like: 21.52,
-        temp_min: 21.06,
-        temp_max: 21.06,
-        pressure: 1019,
-        sea_level: 1019,
-        grnd_level: 913,
-        humidity: 88,
-        temp_kf: 0,
+      {
+          "dt": 1691193600,
+          "main": {
+              "temp": 17,
+              "feels_like": 16.64,
+              "temp_min": 17,
+              "temp_max": 17,
+              "pressure": 1021,
+              "sea_level": 1021,
+              "grnd_level": 908,
+              "humidity": 72,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 803,
+                  "main": "Clouds",
+                  "description": "muy nuboso",
+                  "icon": "04n"
+              }
+          ],
+          "clouds": {
+              "all": 51
+          },
+          "wind": {
+              "speed": 1.43,
+              "deg": 193,
+              "gust": 1.42
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "n"
+          },
+          "dt_txt": "2023-08-05 00:00:00"
       },
-      weather: [
-        { id: 801, main: "Clouds", description: "algo de nubes", icon: "02n" },
-      ],
-      clouds: { all: 15 },
-      wind: { speed: 5.25, deg: 124, gust: 7.15 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "n" },
-      dt_txt: "2023-07-31 00:00:00",
-    },
-    {
-      dt: 1690772400,
-      main: {
-        temp: 19.96,
-        feels_like: 20.41,
-        temp_min: 19.96,
-        temp_max: 19.96,
-        pressure: 1018,
-        sea_level: 1018,
-        grnd_level: 911,
-        humidity: 92,
-        temp_kf: 0,
+      {
+          "dt": 1691204400,
+          "main": {
+              "temp": 15.22,
+              "feels_like": 14.86,
+              "temp_min": 15.22,
+              "temp_max": 15.22,
+              "pressure": 1020,
+              "sea_level": 1020,
+              "grnd_level": 906,
+              "humidity": 79,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 803,
+                  "main": "Clouds",
+                  "description": "muy nuboso",
+                  "icon": "04n"
+              }
+          ],
+          "clouds": {
+              "all": 70
+          },
+          "wind": {
+              "speed": 0.88,
+              "deg": 306,
+              "gust": 0.91
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "n"
+          },
+          "dt_txt": "2023-08-05 03:00:00"
       },
-      weather: [
-        {
-          id: 802,
-          main: "Clouds",
-          description: "nubes dispersas",
-          icon: "03n",
-        },
-      ],
-      clouds: { all: 31 },
-      wind: { speed: 3.47, deg: 125, gust: 5.09 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "n" },
-      dt_txt: "2023-07-31 03:00:00",
-    },
-    {
-      dt: 1690783200,
-      main: {
-        temp: 19.65,
-        feels_like: 20.1,
-        temp_min: 19.65,
-        temp_max: 19.65,
-        pressure: 1019,
-        sea_level: 1019,
-        grnd_level: 912,
-        humidity: 93,
-        temp_kf: 0,
-      },
-      weather: [
-        {
-          id: 802,
-          main: "Clouds",
-          description: "nubes dispersas",
-          icon: "03d",
-        },
-      ],
-      clouds: { all: 28 },
-      wind: { speed: 3.74, deg: 143, gust: 5.82 },
-      visibility: 10000,
-      pop: 0,
-      sys: { pod: "d" },
-      dt_txt: "2023-07-31 06:00:00",
-    },
+      {
+          "dt": 1691215200,
+          "main": {
+              "temp": 15.74,
+              "feels_like": 15.28,
+              "temp_min": 15.74,
+              "temp_max": 15.74,
+              "pressure": 1021,
+              "sea_level": 1021,
+              "grnd_level": 907,
+              "humidity": 73,
+              "temp_kf": 0
+          },
+          "weather": [
+              {
+                  "id": 802,
+                  "main": "Clouds",
+                  "description": "nubes dispersas",
+                  "icon": "03d"
+              }
+          ],
+          "clouds": {
+              "all": 44
+          },
+          "wind": {
+              "speed": 0.85,
+              "deg": 336,
+              "gust": 0.94
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+              "pod": "d"
+          },
+          "dt_txt": "2023-08-05 06:00:00"
+      }
   ],
-  city: {
-    id: 6355330,
-    name: "Higueruela",
-    coord: { lat: 38.9382, lon: -1.4156 },
-    country: "ES",
-    population: 1263,
-    timezone: 7200,
-    sunrise: 1690347647,
-    sunset: 1690399398,
-  },
+  "city": {
+      "id": 2516713,
+      "name": "Higueruela",
+      "coord": {
+          "lat": 38.9644,
+          "lon": -1.4437
+      },
+      "country": "ES",
+      "population": 1351,
+      "timezone": 7200,
+      "sunrise": 1690779912,
+      "sunset": 1690831139
+  }
 };

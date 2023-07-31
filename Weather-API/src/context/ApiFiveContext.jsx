@@ -1,8 +1,8 @@
 import React, { useState, createContext, useCallback } from 'react'
 
 export const ApiFiveContext = createContext({
-  apiFiveDays: '',
-  setApiFiveDays: '',
+  apiFiveDays: {},
+  setApiFiveDays: () => {},
   //changeLatitude: () => null,,
 })
 

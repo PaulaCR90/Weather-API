@@ -1,18 +1,15 @@
-import { createContext, useCallback, useState } from "react";
+import { createContext, useState } from "react";
 
 export const ApiContext = createContext({
-  apiInfo: "",
-  setApiInfo: "",
-  //changeLatitude: () => null,
+  apiInfo: {},
+  setApiInfo: () => {},
 });
 
 export const ApiContextProvider = ({ children }) => {
   const [apiInfo, setApiInfo] = useState({});
-
-  //const changeLatitude = useCallback(() => {});
-
+  
   return (
-  <ApiContext.provider value={{selectValue, setSelectValue}}>
+  <ApiContext.Provider value={{apiInfo, setApiInfo}}>
     {children}
-  </ApiContext.provider>);
+  </ApiContext.Provider>);
 };

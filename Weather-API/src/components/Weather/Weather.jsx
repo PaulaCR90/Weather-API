@@ -1,26 +1,29 @@
 import React, { useContext } from "react";
 import { ApiContext } from "../../context/ApiContext";
+import Spinner from "../Spinner/Spinner";
+import './Weather.css'
 
 const Weather = () => {
-  const { apiInfo } = useContext(ApiContext)
+  const { apiInfo } = useContext(ApiContext);
   return (
     <>
-      <div className="main-weather">
-        <h3>{apiInfo.localización}</h3>
-        <p>{apiInfo.temperatura} °C</p>
-        <p>{apiInfo.descripción}</p>
-        <div className="temp">
-          <img
-            src="http://openweathermap.org/img/w/${apiInfo.condiciones}.png"
-            alt={apiInfo.descripción}
-          />
-          <p>{apiInfo.máximas}</p>
-        </div>
-        <div className="temp">
-          <img src="" alt="" />
-          <p>{apiInfo.mínimas}</p>
-        </div>
-      </div>
+    {apiInfo ? 
+    (<div className="main-weather">
+          <h3>{apiInfo.name}</h3>
+          {/* <p>{apiInfo.main.temp} °C</p> */}
+          {/* <p>{apiInfo.weather[0].description}</p> */}
+          <div className="temp">
+            <img
+              src="../src/assets/temp-max.png"
+              alt={apiInfo.descripción}
+            />
+            {/* <p>{apiInfo.main.temp_max}</p> */}
+          </div>
+          <div className="temp">
+            <img src="../src/assets/temp-min.png" alt="" />
+            {/* <p>{apiInfo.main.temp_min}</p> */}
+          </div>
+        </div>) : <NotFound />}
     </>
   );
 };
