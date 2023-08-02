@@ -1,12 +1,13 @@
-import React, { useState, createContext, useCallback } from "react";
+import React, { useState, createContext } from "react";
+import { fiveDaysResponse } from "../data/ResponseMock";
 
 export const ApiFiveContext = createContext({
-  apiFiveDays: "",
+  apiFiveDays: {},
   setApiFiveDays: () => {},
 });
 
-export const ApiFiveDays = ({ children }) => {
-  const [apiFiveDays, setApiFiveDays] = useState({});
+export const ApiFiveContextProvider = ({ children }) => {
+  const [apiFiveDays, setApiFiveDays] = useState({fiveDaysResponse});
 
   return (
     <ApiFiveContext.Provider value={{ apiFiveDays, setApiFiveDays }}>
@@ -14,5 +15,3 @@ export const ApiFiveDays = ({ children }) => {
     </ApiFiveContext.Provider>
   );
 };
-
-export default ApiFiveDays;

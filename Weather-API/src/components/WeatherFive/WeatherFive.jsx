@@ -4,7 +4,7 @@ import "./WeatherFive.css";
 
 const WeatherFive = () => {
   const { apiFiveDays } = useContext(ApiFiveContext);
-  let date = apiFiveDays.list[0].dt_txt;
+  let date = Object.keys(apiFiveDays.list[0].dt_txt);
   let texto = date.slice(5, 10);
   let finalDate = texto.replace(/^(\d{2})-(\d{2})$/g, "$2/$1");
 
