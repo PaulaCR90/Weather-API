@@ -1,24 +1,23 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
-import Header from "./components/Header/Header";
+import React, { useState, useEffect, useContext } from "react";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import CallApi from "./components/CallApi/CallApi";
+import { ApiContext } from "./context/ApiContext";
 
 function App() {
-  const [tabletOrLess, setTabletOrLess] = useState(false);
-  useEffect(() => {
-    if (window.innerWidth < 700) {
-      setTabletOrLess(true);
-    }
-  }, []);
+  const { apiInfo } = useContext(ApiContext);
 
   return (
-    <>      
-      <CallApi />
-      <Header tabletOrLess={tabletOrLess} />
-      <Home />
-      <Footer />
+    <>
+      {/* {apiInfo ? (
+        <>
+          <Home />
+          <Footer />
+        </>
+      ) : (
+        <CallApi />
+      )} */}
     </>
   );
 }

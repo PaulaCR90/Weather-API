@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 
 export const ApiContext = createContext({
-  apiInfo: {},
+  apiInfo: '',
   setApiInfo: () => {},
 });
 

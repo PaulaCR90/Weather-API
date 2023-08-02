@@ -4,40 +4,28 @@ import { ApiContext } from "../../context/ApiContext";
 import { ApiFiveContext } from "../../context/ApiFiveContext";
 
 const CallApi = () => {
+  // Declarar contextos y estados necesarios.
   const { setApiInfo } = useContext(ApiContext);
   const { setApiFiveDays } = useContext(ApiFiveContext);
-  const [location, setLocation] = useState(null);
-  const [latitude, setLatitude] = useState("");
-  const [longitude, setLongitude] = useState("");
+  const [latitude, setLatitude] = useState(null);
+  const [longitude, setLongitude] = useState(null);
 
   useEffect(() => {
-    const getLocation = () => {
-
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-          const { latitude, longitude } = position.coords;
-          setLatitude(latitude);
-          setLongitude(longitude);
-          setLocation({ latitude, longitude });
-        });
-      } else {
-        alert(`😵‍💫 Tu ubicación está desactivada...\n¡Actívala para continuar!`);
-      }
-    };
-    getLocation();
-  }, [location]);
-
-  useEffect(() => {
-   // if (location) {
-      const API_KEY = "3475019ae4481bceaf9ea6dd818241fe";
+    if (latitude !== null && longitude !== null) {
+      const API_KEY = "67038b5b098f4a7d4de263428fb9af54";
       const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`;
       const API_URL_fiveDays = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`;
-      axios.get(API_URL).then((res) => setApiInfo(res));
-      axios.get(API_URL_fiveDays).then((res) => setApiFiveDays(res));
-    // } else {
-    //     return alert('Oops! An error occurred.\nPlease, reload or try again later.')
-    // }
-  }, [location]);
+      // Realizar la llamada a la API.
+      axios.get(API_URL).then((res) => setApiInfo(res.data));
+      axios.get(API_URL_fiveDays).then((res) => setApiFiveDays(res.data));
+    }
+    // Obtener ubicación del usuario.
+    navigator.geolocation.getCurrentPosition((position) => {
+      const { latitude, longitude } = position.coords;
+      setLatitude(latitude);
+      setLongitude(longitude);
+    });
+  }, [latitude, longitude]);
 };
 
 export default CallApi;

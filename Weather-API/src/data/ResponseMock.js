@@ -1,4 +1,4 @@
-const initialResponse = {
+export const initialResponse = {
   "coord": {
       "lon": -1.4437,
       "lat": 38.9644
@@ -46,7 +46,7 @@ const initialResponse = {
 };
 
 //* Cinco horas por día, cinco días consecutivos.
-const fiveDaysResponse = {
+export const fiveDaysResponse = {
   "cod": "200",
   "message": 0,
   "cnt": 40,

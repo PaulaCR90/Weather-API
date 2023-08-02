@@ -1,42 +1,18 @@
-// Select para pedir el tiempo en cinco ciudades.
-import React from "react";
-import CallApi from "../components/CallApi/CallApi";
+// El tiempo en cinco ciudades.
+import React, { useContext } from "react";
+import { SelectContext } from "../context/SelectContext";
+import Weather from "../components/Weather/Weather";
+import WeatherFive from "../components/WeatherFive/WeatherFive";
 
 const FiveCities = () => {
-  const handleChange = (e) => {
-    setSelectValue(e.target.value);
-  };
-  const handleClick = () => {
-    <CallApi />
-  }
-
+  const { selectValue } = useContext(SelectContext);
   return (
     <>
-      <select
-        name="cities"
-        id="cities"
-        defaultValue={"default"}
-        onChange={handleChange}
-      >
-        <option value="default" disabled>
-          Ciudades
-        </option>
-        <option value="berlin">Berlín</option>
-        <option value="bogota">Bogotá</option>
-        <option value="Denver">Denver</option>
-        <option value="Estocolmo">Estocolmo</option>
-        <option value="Helsinki">Helsinki</option>
-        <option value="lisboa">Lisboa</option>
-        <option value="oslo">Oslo</option>
-        <option value="palermo">Palermo</option>
-        <option value="rio">Río de Janeiro</option>
-        <option value="tokio">Tokio</option>
-        <option value="manila">Manila</option>
-        <option value="marsella">Marsella</option>
-        <option value="moscu">Moscú</option>
-        <option value="nairobi">Nairobi</option>
-      </select>
-      <button onClick={handleClick}>Buscar</button>
+      <article style={{backgroundImage: URL(`../assets/${selectValue}-background.jpg`)}}>
+        <h4>{selectValue}</h4>
+        <Weather />
+        <WeatherFive />
+      </article>
     </>
   );
 };

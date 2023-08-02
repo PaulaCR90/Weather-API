@@ -52,8 +52,9 @@ export const datosCinco = [
 
 //* formatear fecha en dd/mm
 
-let date = "2023-07-26 09:00:00"
+let date = "2023-07-26 09:00:00";
 let texto = date.slice(5, 10);
-function format(fecha){
+function format(date){
   return fecha.replace(/^(\d{2})-(\d{2})$/g, '$2/$1');
 }
+

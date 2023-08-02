@@ -7,7 +7,7 @@
     overflow: hidden;
     transition: all, 1s;
     background-color: purple;
-    height: 100svh;
+    height: 100vh;
     position: fixed;
     top: 0;
     display: flex;
@@ -16,16 +16,17 @@
     z-index: 1;
 }
 
-#burger-menu a {
+#burger-menu li {
     color: whitesmoke;
+    font-size: 0.5em;
 }
 
 .isOpen {
     width: 100% !important;
 }
 
-@media screen and (min-width: 465px) {
+/* @media screen and (min-width: 465px) {
     .isOpen {
         width: 10% !important;
     }
-}
+} */
