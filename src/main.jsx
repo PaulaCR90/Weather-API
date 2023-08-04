@@ -7,7 +7,7 @@ import { ApiFiveContextProvider } from "./context/ApiFiveContext.jsx";
 import { SelectContextProvider } from "./context/SelectContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <SelectContextProvider>
       <ApiContextProvider>
         <ApiFiveContextProvider>
@@ -15,5 +15,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </ApiFiveContextProvider>
       </ApiContextProvider>
     </SelectContextProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );

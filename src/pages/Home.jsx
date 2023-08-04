@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Weather from "../components/Weather/Weather";
 import WeatherFive from "../components/WeatherFive/WeatherFive";
-import { SelectContext } from "../context/SelectContext";
+import Select from "../components/Select/Select";
 import { ApiContext } from "../context/ApiContext";
 
 const Home = ({ tabletOrLess }) => {
@@ -18,6 +18,7 @@ const Home = ({ tabletOrLess }) => {
             }
       }
     >
+      <Select />
       <Weather tabletOrLess={tabletOrLess} />
       <WeatherFive />
     </main>

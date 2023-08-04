@@ -28,7 +28,6 @@ const Weather = ({ tabletOrLess }) => {
 
   return (
     <>
-      <Select />
       {tabletOrLess ? (
         <div className="main-weather">
           <h3>{apiInfo.name}</h3>

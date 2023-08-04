@@ -10,7 +10,7 @@
     border-top: 0.5px solid var(--five-border);
     padding: 1rem 0.5rem 1rem 0.5rem;
     font-size: 0.7rem;
-    width: 100vw;
+    width: 100%;
 }
 
 .each-day-weather {
@@ -34,28 +34,12 @@
 
 @media screen and (min-width: 700px) {
     .five-weather {
-        display: flex;
-        align-items: center;
         justify-content: space-around;
-        margin-top: 1rem;
-        background-color: var(--five-background);
-        font-size: 0.8rem;
         border: 1px solid var(--five-border);
         border-radius: 25px;
-        font-size: 0.7rem;
-        width: 90vw;
     }
 
     .each-day-weather {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        background-color: var(--five-background);
-        border-radius: 25px;
-        border: 0.5px solid var(--five-border);
-        cursor: pointer;
-        transition: all .2s ease-in-out;
-        color: var(--five-border);
         width: 10%;
     }
 
