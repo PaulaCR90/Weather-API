@@ -23,8 +23,8 @@ const Home = ({ tabletOrLess }) => {
         <Select />
         <Weather tabletOrLess={tabletOrLess} />
         <WeatherFive />
+        <Footer />
       </main>
-      <Footer />
     </>
   );
 };
