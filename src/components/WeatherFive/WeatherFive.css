@@ -37,6 +37,7 @@
         justify-content: space-around;
         border: 1px solid var(--five-border);
         border-radius: 25px;
+        width: 95vw;
     }
 
     .each-day-weather {
