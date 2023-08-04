@@ -29,6 +29,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 30vh;
+      height: 100vh;
+    }
+
+    .spinner > img {
+      height: 20vh;
     }
   }
