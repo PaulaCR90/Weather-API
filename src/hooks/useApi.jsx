@@ -26,7 +26,7 @@ const useApi = () => {
         },
         (error) => {
           alert(
-            `😵‍💫 ¡Permisos de ubicación desactivados!\nActívalos para continuar.`
+            `😵‍💫 ¡Permisos de ubicación desactivados!\nActívalos y actualiza la página\npara continuar.`
           );
         }
       );
