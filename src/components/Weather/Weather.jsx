@@ -29,26 +29,28 @@ const Weather = ({ tabletOrLess }) => {
   return (
     <>
       {tabletOrLess ? (
-        <div className="main-weather">
-          <h3>{apiInfo.name}</h3>
-          <p>{apiInfo.weather[0].description}</p>
-          <img
-            src={`./assets/icons/${apiInfo.weather[0].icon}.png`}
-            alt="icono tiempo"
-          />
-          <p>{Math.round(apiInfo.main.temp)} °C</p>
-          <div className="temp-container">
-            <div className="temp">
-              <img src="./assets/temp-max.png" alt="máximas" />
-              <p>{Math.round(apiInfo.main.temp_max)} °C</p>
-            </div>
-            <span>/</span>
-            <div className="temp">
-              <img src="./assets/temp-min.png" alt="mínimas" />
-              <p>{Math.round(apiInfo.main.temp_min)} °C</p>
+        <article>
+          <div className="main-weather">
+            <h3>{apiInfo.name}</h3>
+            <p>{apiInfo.weather[0].description}</p>
+            <img
+              src={`./assets/icons/${apiInfo.weather[0].icon}.png`}
+              alt="icono tiempo"
+            />
+            <p>{Math.round(apiInfo.main.temp)} °C</p>
+            <div className="temp-container">
+              <div className="temp">
+                <img src="./assets/temp-max.png" alt="máximas" />
+                <p>{Math.round(apiInfo.main.temp_max)} °C</p>
+              </div>
+              <span>/</span>
+              <div className="temp">
+                <img src="./assets/temp-min.png" alt="mínimas" />
+                <p>{Math.round(apiInfo.main.temp_min)} °C</p>
+              </div>
             </div>
           </div>
-        </div>
+        </article>
       ) : (
         <article>
           <div className="main-conditions">
@@ -57,15 +59,15 @@ const Weather = ({ tabletOrLess }) => {
                 src="https://media.giphy.com/media/cIfj6F7459CVOsrOlN/giphy.gif"
                 alt="sensación térmica"
               />
-              Sensación térmica:{" "}{Math.round(apiInfo.main.feels_like)} °C
+              Sensación térmica: {Math.round(apiInfo.main.feels_like)} °C
             </p>
             <p>
               <img src="./assets/icons/visibility.png" alt="visibilidad" />
-              Visibilidad:{" "}{apiInfo.visibility}
+              Visibilidad: {apiInfo.visibility}
             </p>
             <p>
               <img src="./assets/icons/humidity.png" alt="humedad" />
-              Humedad:{" "}{apiInfo.main.humidity}%
+              Humedad: {apiInfo.main.humidity}%
             </p>
           </div>
           <div className="main-weather">
@@ -90,16 +92,16 @@ const Weather = ({ tabletOrLess }) => {
           </div>
           <div className="main-conditions">
             <p>
-              <img src="./assets/icons/wind.png" alt="viento" />Viento:{" "}
-              {apiInfo.wind.speed} km/h
+              <img src="./assets/icons/wind.png" alt="viento" />
+              Viento: {apiInfo.wind.speed} km/h
             </p>
             <p>
               <img src="./assets/icons/sunrise.png" alt="sunrise" />
-              Amanecer:{" "}{sunriseHours}:{sunriseMinutes}:{sunriseSeconds}
+              Amanecer: {sunriseHours}:{sunriseMinutes}:{sunriseSeconds}
             </p>
             <p>
               <img src="./assets/icons/sunset.png" alt="sunset" />
-              Atardecer:{" "}{sunsetHours}:{sunsetMinutes}:{sunsetSeconds}
+              Atardecer: {sunsetHours}:{sunsetMinutes}:{sunsetSeconds}
             </p>
           </div>
         </article>
