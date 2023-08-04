@@ -5,8 +5,9 @@
   height: 100vh;
 }
 
-.spinner-div img {
-  height: fit-content;
+.spinner-div > img {
+  height: 10vh;
+  width: fit-content;
 }
 
 .spinner {
@@ -30,9 +31,5 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-    }
-
-    .spinner > img {
-      height: 20vh;
     }
   }

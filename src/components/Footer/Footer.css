@@ -4,7 +4,7 @@ footer {
     align-items: center;
     justify-content: space-evenly;
     background-color: var(--footer-background);
-    height: 55px;
+    height: 51px;
     width: 100vw;
     bottom: 0;
     position: fixed;
