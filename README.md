@@ -17,7 +17,7 @@ Upside, you have a "Ciudades" select, where you can choose from many cities to s
 You will have a responsive option with your phone, where we get less info about today, but the same utilities.
 ![loaded-portrait](https://github.com/PaulaCR90/Weather-API/assets/129939920/2dec5452-bde6-424b-b696-acc415ee4e02)
 
-- Manila selected from options above.
+- Manila selected from options above:
 ![manila-portrait](https://github.com/PaulaCR90/Weather-API/assets/129939920/1c1678e5-d4d2-44b8-8be4-1c51a6ae2820)
 
 - While the app is asking de API for the info requested, the site will show a simple loading page.
