@@ -6,7 +6,7 @@ select {
     border-radius: 25px;
     text-align: center;
     cursor: pointer;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 select:hover {
