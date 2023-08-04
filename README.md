@@ -1,10 +1,9 @@
-- Weather App.
+***Weather App.
 URL: https://weatherapp-paulacr.netlify.app
-
-This App provides weather information from your coords.
+-
+- This App provides weather information from your coords.\n
 ***First of all, get sure that the site has the permissions needed.
 If you don't, you'll get something like this:
--
 ![alert](https://github.com/PaulaCR90/Weather-API/assets/129939920/d23b4043-b42e-4e9d-9c19-a1e880ba3140)
 
 - Landing page:
