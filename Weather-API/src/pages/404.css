@@ -1,13 +1,27 @@
 .NotFound-container {
-    height: 100%;
-    margin-top: 5rem;
-    margin-bottom: 2.6rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .NotFound-container > img {
-    height: 18rem;
+  width: 15rem;
+  height: fit-content;
+}
+
+.NotFound-container > button {
+  width: 10rem;
+  height: 2rem;
+  border: 2px solid var(--border-button);
+  background-color: var(--background-button);
+  border-radius: 25px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.NotFound-container > button:hover {
+  background-color: var(--hover-button-background);
+  color: var(--hover-button);
 }

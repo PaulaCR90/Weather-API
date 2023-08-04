@@ -1,38 +1,65 @@
 .five-weather {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-top: 1rem;
-    background-color: rgb(45, 0, 128, 0.5);
+    background-color: var(--five-background);
     font-size: 0.8rem;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    border: 0.5px solid white;
-    border-bottom: 0;
-    gap: 0.5rem;
-    padding: 1rem;
+    border-top: 0.5px solid var(--five-border);
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    font-size: 0.7rem;
     width: 100vw;
 }
 
 .each-day-weather {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-color: rgb(45, 0, 128, 0.5);
+    padding: 1rem 0.2rem 1rem 0.2rem;
+    background-color: var(--five-background);
     border-radius: 25px;
-    border: 0.5px solid white;
+    border: 0.5px solid var(--five-border);
     cursor: pointer;
     transition: all .2s ease-in-out;
+    color: var(--five-border);
 }
 
-/* .temp-cont {
-    display: flex;
-} */
-
 .each-day-weather:hover {
-    background-color: rgb(40, 39, 121);
+    background-color: var(--five-hover-background);
     transform: scale(1.1);
+}
+
+@media screen and (min-width: 700px) {
+    .five-weather {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 1rem;
+        background-color: var(--five-background);
+        font-size: 0.8rem;
+        border: 1px solid var(--five-border);
+        border-radius: 25px;
+        font-size: 0.7rem;
+        width: 90vw;
+    }
+
+    .each-day-weather {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: var(--five-background);
+        border-radius: 25px;
+        border: 0.5px solid var(--five-border);
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+        color: var(--five-border);
+        width: 10%;
+    }
+
+    .temp-cont {
+        display: flex;
+    }
 }

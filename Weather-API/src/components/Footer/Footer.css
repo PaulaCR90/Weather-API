@@ -2,7 +2,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--footer-background);
     height: 50px;
     width: 100vw;
     bottom: 0;
@@ -22,7 +22,11 @@ img {
 }
 
 h6 a {
-    color: rgb(0, 126, 0);
+    color: var(--a);
+}
+
+h6 a:hover {
+  color: var(--a-hover);
 }
 
 @media screen and (min-width: 465px) {

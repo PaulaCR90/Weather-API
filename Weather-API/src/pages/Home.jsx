@@ -1,25 +1,26 @@
-// El tiempo según ubicación.
 import React, { useContext } from "react";
 import Weather from "../components/Weather/Weather";
 import WeatherFive from "../components/WeatherFive/WeatherFive";
-import Spinner from "../components/Spinner/Spinner";
+import { SelectContext } from "../context/SelectContext";
 import { ApiContext } from "../context/ApiContext";
 
-const Home = () => {
+const Home = ({ tabletOrLess }) => {
   const { apiInfo } = useContext(ApiContext);
   return (
-    <>
-      {apiInfo ? (
-        <main>
-            <>
-              <Weather />
-              <WeatherFive />
-            </>     
-        </main>
-      ) : (
-        <main><Spinner /></main>
-      )}
-    </>
+    <main
+      style={
+        tabletOrLess
+          ? {
+              backgroundImage: `url("./assets/backgrounds/${apiInfo.weather[0].icon}-portrait.jpg")`,
+            }
+          : {
+              backgroundImage: `url("./assets/backgrounds/${apiInfo.weather[0].icon}-landscape.jpg")`,
+            }
+      }
+    >
+      <Weather tabletOrLess={tabletOrLess} />
+      <WeatherFive />
+    </main>
   );
 };
 

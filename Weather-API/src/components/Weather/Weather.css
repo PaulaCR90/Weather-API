@@ -1,38 +1,31 @@
-/* coords background {
-    01d - sol
-    02d - sol + nube
-    03d - nube clara
-    04d - nube gris
-    09d - nube gris + lluvia
-    10d - sol + nube + lluvia
-    11d - nube gris + tormenta
-    13d - nieve
-    50d - niebla
-}
-
-Para iconos nocturnos n en lugar de d */
-
-/* if (datosHome.condiciones === 01d) */
-
-/* .main-weather {
-    background-image: "../../assets/{datosHome.condiciones}.jpg";
-} */
-main {
-  height: 100vh;
-  background-image: url("../../../src/assets/prueba13d.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.main-weather {
+article {
   width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.main-weather, .main-conditions {
+  width: 90vw;
+  height: 20rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  padding-top: 3rem;
-  color: rgb(34, 34, 34);
+  padding-top: 2rem;
+  margin-top: 2rem;
+  color: var(--color);
+  background-color: var(--background-color-day);
+  border-radius: 25px;
+}
+
+.main-conditions {
+  justify-content: space-evenly;
+}
+
+.main-conditions > img {
+  height: 2rem;
+  width: fit-content;
 }
 
 .temp-container {
@@ -44,8 +37,14 @@ main {
 
 .temp {
   display: flex;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   align-items: center;
+}
+
+p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 span {
@@ -53,17 +52,13 @@ span {
   margin-right: 0.5rem;
 }
 
-.no-weather-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 90vh;
-  background-image: url("../src/assets/01d.jpg");
-  background-size: cover;
+.main-weather > img {
+  width: max-content;
+  height: 5rem;
 }
 
-.main-weather > img {
-  width: 5rem;
-  height: 5rem;
+@media screen and (min-width: 700px) {
+  .main-weather, .main-conditions {
+    width: 30%;
+  }
 }

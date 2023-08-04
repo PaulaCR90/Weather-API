@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { SelectContext } from "../../context/SelectContext";
 import { citiesCoords } from "./InfoSelect";
+import './Select.css'
 
 const Select = () => {
   const { setSelectValue } = useContext(SelectContext);
@@ -13,14 +14,14 @@ const Select = () => {
       <select
         name="cities"
         id="cities"
-        defaultValue={"default"}
+        defaultValue="default"
         onChange={handleChange}
       >
         <option value="default" disabled>
           Ciudades
         </option>
         {Object.keys(citiesCoords).map((city) => (
-          <option key={city} value="${city}">
+          <option key={city} value={city}>
             {city}
           </option>
         ))}

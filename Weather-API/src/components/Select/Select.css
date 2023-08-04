@@ -1,0 +1,18 @@
+select {
+    width: 200px;
+    height: 30px;
+    border: 2px solid var(--border-button);
+    background-color: var(--background-button);
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+select:hover {
+    background-color: rgb(0, 0, 0, 0.5);
+    color: var(--hover-button);
+}
+
+select option {
+    text-align: center;
+}
