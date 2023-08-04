@@ -33,7 +33,6 @@ function App() {
       ) : (
         <>
           <Home tabletOrLess={tabletOrLess} />
-          <Footer />
         </>
       )}
     </>
