@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import "./WeatherFive.css";
 import { ApiFiveContext } from "../../context/ApiFiveContext";
-import Footer from "../Footer/Footer";
 
 const WeatherFive = () => {
   const { apiFiveDays } = useContext(ApiFiveContext);
@@ -35,7 +34,6 @@ const WeatherFive = () => {
           );
         })}
       </div>
-      <Footer />
     </>
   );
 };
