@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "./404.css";
-import Footer from "../components/Footer/Footer";
+import Home from "./Home";
 
-const NotFound = () => {
+const NotFound = ({ tabletOrLess }) => {
+  const [showHome, setShowHome] = useState(false);
+
+  const handleClick = () => {
+    setShowHome(true);
+  };
+
   return (
     <>
-      <article className="NotFound-container">
-        <h4>{`Sorry!\nPage not found.`}</h4>
-        <img src="./assets/404-background.png" alt="Error" />
-        <button>Go back! 🌤️</button>
-      </article>
-      <Footer />
+      {showHome ? (
+        <Home tabletOrLess={tabletOrLess} />
+      ) : (
+        <article className="NotFound-container">
+          <h4>{`Sorry!\nPage not found.`}</h4>
+          <img src="./assets/404-background.png" alt="Error" />
+          <button onClick={handleClick}>Go back! 🌤️</button>
+        </article>
+      )}
     </>
   );
 };

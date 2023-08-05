@@ -1,4 +1,4 @@
-main {
+.body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,4 +6,9 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  text-align: center;
+}
+
+.body header select option {
+  text-align: center;
 }

@@ -27,13 +27,17 @@ function App() {
   return (
     <>
       {loading && !apiInfo ? (
-        <Spinner />
-      ) : showNotFound ? (
-        <NotFound />
-      ) : (
         <>
-          <Home tabletOrLess={tabletOrLess} />
+          <Spinner />
+          <Footer />
         </>
+      ) : showNotFound ? (
+        <>
+          <NotFound tabletOrLess={tabletOrLess} />
+          <Footer />
+        </>
+      ) : (
+        <Home tabletOrLess={tabletOrLess} />
       )}
     </>
   );
