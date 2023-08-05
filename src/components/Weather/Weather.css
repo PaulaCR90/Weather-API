@@ -24,8 +24,8 @@ article {
 }
 
 .main-conditions > img {
-  width: 4rem;
-  height: fit-content;
+  height: 2rem;
+  width: fit-content;
 }
 
 .temp-container {
@@ -53,8 +53,8 @@ span {
 }
 
 .main-weather > img {
-  width: max-content;
-  height: 5rem;
+  height: fit-content;
+  width: 10rem;
 }
 
 @media screen and (min-width: 700px) {
