@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ***Weather App.
 URL: https://weatherapp-paulacr.netlify.app
 -
@@ -35,3 +36,6 @@ You will have a responsive option with your phone, where we get less info about 
 
   Hope you enjoy it!
   
+=======
+
+>>>>>>> e7fd7d981c154b093946a160da6150556b7a5bf0
