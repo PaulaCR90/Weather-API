@@ -24,8 +24,8 @@ article {
 }
 
 .main-conditions > img {
-  height: 2rem;
-  width: fit-content;
+  width: 2rem;
+  height: fit-content;
 }
 
 .temp-container {
