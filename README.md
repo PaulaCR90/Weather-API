@@ -32,3 +32,6 @@ You will have a responsive option with your phone, where we get less info about 
 - If the API gives no response, or any error occurred, the site will show a 404 page(same styles on computer than on mobile):
   
   ![404portrait](https://github.com/PaulaCR90/Weather-API/assets/129939920/288100f2-64b0-4d61-8974-fea671245ae1)
+
+  Hope you enjoy it!
+  
