@@ -1,3 +1,7 @@
+#root {
+  height: 100vh;
+}
+
 .body {
   display: flex;
   flex-direction: column;
@@ -5,10 +9,11 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  text-align: center;
+  height: 100%;
 }
 
-.body header select option {
-  text-align: center;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
