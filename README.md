@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ***Weather App.
 URL: https://weatherapp-paulacr.netlify.app
 -
@@ -35,7 +35,3 @@ You will have a responsive option with your phone, where we get less info about 
   ![404portrait](https://github.com/PaulaCR90/Weather-API/assets/129939920/288100f2-64b0-4d61-8974-fea671245ae1)
 
   Hope you enjoy it!
-  
-=======
-
->>>>>>> e7fd7d981c154b093946a160da6150556b7a5bf0
