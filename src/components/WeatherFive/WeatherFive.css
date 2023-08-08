@@ -47,19 +47,21 @@
         border: 1px solid var(--five-border);
         border-radius: 25px;
         width: 85svw;
-        height: 70svh;
+        height: 50svh;
     }
 
     .each-day-weather {
-        width: 20%;
-        height: fit-content;
+        width: 15%;
+        height: 30svh;
     }
 
     .temp-cont {
         display: flex;
     }
-    .temp-cont > img {
+
+    .container > img {
         width: 5rem;
         height: fit-content;
+        margin-bottom: 2rem;
     }
 }
