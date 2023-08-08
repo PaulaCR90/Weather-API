@@ -1,15 +1,17 @@
-import React from 'react'
-import Select from '../Select/Select'
-import './Header.css'
+import "./Header.css";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
+import NavBar from "../NavBar/NavBar";
 
-const Header = () => {
+const Header = ({ tabletOrLess }) => {
   return (
-    <>
-        <header>
-            <Select />
-        </header>
-    </>
-  )
-}
+    <header>
+      {tabletOrLess ? (
+        <BurgerMenu />
+      ) : (
+        <NavBar />
+      )}
+    </header>
+  );
+};
 
-export default Header
+export default Header;

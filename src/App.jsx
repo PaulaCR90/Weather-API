@@ -1,7 +1,8 @@
 import "./App.css";
 import React, { useState, useEffect, useContext } from "react";
 import Footer from "./components/Footer/Footer";
-import Home from "./pages/Home";
+import Header from "./components/Header/Header";
+import { Outlet } from "react-router-dom";
 import useApi from "./hooks/useApi";
 import Spinner from "./components/Spinner/Spinner";
 import NotFound from "./pages/404";
@@ -15,30 +16,13 @@ function App() {
       setTabletOrLess(true);
     }
   }, []);
-  useEffect(() => {
-    if (!apiInfo && loading) {
-      const timeoutId = setTimeout(() => {
-        setShowNotFound(true);
-      }, 8000);
-      return () => clearTimeout(timeoutId);
-    }
-  }, [apiInfo, loading]);
-
   return (
     <>
-      {loading && !apiInfo ? (
-        <>
-          <Spinner />
-          <Footer />
-        </>
-      ) : showNotFound ? (
-        <>
-          <NotFound tabletOrLess={tabletOrLess} />
-          <Footer />
-        </>
-      ) : (
-        <Home tabletOrLess={tabletOrLess} />
-      )}
+      <div className="app">
+        <Header tabletOrLess={tabletOrLess} />
+        <Outlet />
+        <Footer />
+      </div>
     </>
   );
 }

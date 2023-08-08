@@ -1,9 +1,11 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Weather from "../components/Weather/Weather";
 import { ApiContext } from "../context/ApiContext";
-import useApi from "../hooks/useApi";
+import Select from "../components/Select/Select";
+import { NavLink } from "react-router-dom";
+import './Cities.css'
 
-const Home = () => {
+const Cities = () => {
   const { apiInfo } = useContext(ApiContext);
   const [tabletOrLess, setTabletOrLess] = useState(false);
   useEffect(() => {
@@ -24,9 +26,11 @@ const Home = () => {
             }
       }
     >
+      <Select />
       <Weather tabletOrLess={tabletOrLess} />
+      <button><NavLink to="/NextDays">Próximos días</NavLink></button>
     </div>
   );
 };
 
-export default Home;
+export default Cities;

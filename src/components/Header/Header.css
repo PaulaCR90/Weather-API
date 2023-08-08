@@ -1,5 +1,27 @@
 header {
+    background-color: var(--footer-background);
+    height: 10svh;
+    width: 100svw;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--a);
+    top: 0;
+    position: absolute;
+}
+
+ul {
+    width: 100svw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+li {
+    cursor: pointer;
+}
+
+li:hover {
+    color: var(--hover-button);
 }

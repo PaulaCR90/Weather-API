@@ -4,7 +4,7 @@ import { ApiFiveContext } from "../../context/ApiFiveContext";
 
 const WeatherFive = () => {
   const { apiFiveDays } = useContext(ApiFiveContext);
-
+  console.log(apiFiveDays);
   return (
     <>
       <div className="five-weather">
@@ -16,18 +16,20 @@ const WeatherFive = () => {
           return (
             <div key={day.dt_txt} className="each-day-weather">
               <p>{finalDate}</p>
-              <img
-                src={`./assets/icons/${day.weather[0].icon}.png`}
-                alt={day.weather[0].description}
-              />
-              <div className="temp-cont">
-                <div className="temp">
-                  <img src="./assets/temp-max.png" alt="máximas" />
-                  <p>{Math.round(day.main.temp_max)}</p>
-                </div>
-                <div className="temp">
-                  <img src="./assets/temp-min.png" alt="mínimas" />
-                  <p>{Math.round(day.main.temp_min)}</p>
+              <div className="container">
+                <img
+                  src={`./assets/icons/${day.weather[0].icon}.png`}
+                  alt={day.weather[0].description}
+                />
+                <div className="temp-cont">
+                  <div className="temp">
+                    <img src="./assets/temp-max.png" alt="máximas" />
+                    <p>{Math.round(day.main.temp_max)}</p>
+                  </div>
+                  <div className="temp">
+                    <img src="./assets/temp-min.png" alt="mínimas" />
+                    <p>{Math.round(day.main.temp_min)}</p>
+                  </div>
                 </div>
               </div>
             </div>

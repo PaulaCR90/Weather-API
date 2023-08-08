@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { ApiContext } from "../../context/ApiContext";
 import "./Weather.css";
-import { format, utcToZonedTime } from "date-fns-tz";
-import Select from "../Select/Select";
+import { utcToZonedTime } from "date-fns-tz";
 
 const Weather = ({ tabletOrLess }) => {
   const { apiInfo } = useContext(ApiContext);

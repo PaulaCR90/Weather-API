@@ -1,0 +1,19 @@
+.app > button {
+  margin-top: 2rem;
+  width: 10rem;
+  height: 2rem;
+  border: 2px solid var(--border-button);
+  background-color: var(--background-button);
+  border-radius: 25px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.app > button:hover {
+  background-color: var(--hover-button-background);
+  color: var(--hover-button);
+}
+
+a {
+    color: black;
+}

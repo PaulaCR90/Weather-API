@@ -1,16 +1,32 @@
 .five-weather {
+    height: 80svh;
+    margin-top: 4rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-top: 2.1rem;
     background-color: var(--five-background);
     font-size: 0.8rem;
     border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    border-top: 0.5px solid var(--five-border);
+    border-radius: 25px;
+    border: 0.5px solid var(--five-border);
     padding: 1rem 0.5rem 1rem 0.5rem;
     font-size: 0.7rem;
-    width: 100%;
+    width: 50svw;
+}
+
+.app {
+    background-image: url(../../../public/assets/backgrounds/01d-landscape.jpg);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.temp-cont {
+    display: flex;
 }
 
 .each-day-weather {
@@ -19,6 +35,7 @@
     align-items: center;
     justify-content: space-evenly;
     padding: 1rem 0.2rem 1rem 0.2rem;
+    width: 5rem;
     background-color: var(--five-background);
     border-radius: 25px;
     border: 0.5px solid var(--five-border);
@@ -27,17 +44,24 @@
 
 @media screen and (min-width: 700px) {
     .five-weather {
+        flex-direction: row;
         justify-content: space-around;
         border: 1px solid var(--five-border);
         border-radius: 25px;
         width: 85svw;
+        height: 70svh;
     }
 
     .each-day-weather {
-        width: 10%;
+        width: 20%;
+        height: fit-content;
     }
 
     .temp-cont {
         display: flex;
+    }
+    .temp-cont > img {
+        width: 5rem;
+        height: fit-content;
     }
 }

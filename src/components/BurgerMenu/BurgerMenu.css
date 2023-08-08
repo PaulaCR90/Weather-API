@@ -1,0 +1,33 @@
+.toggle {
+  width: 40px;
+  height: fit-content;
+  cursor: pointer;
+}
+
+#hamburguesa {
+  width: 0px;
+  overflow: hidden;
+  transition: all, 1s;
+  background-color: var(--five-hover-background);
+  height: 30svh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+#hamburguesa a {
+  color: var(--hover-button);
+}
+
+#hamburguesa a:hover {
+    text-decoration-line: underline;
+}
+
+.isOpen {
+  width: 100% !important;
+}

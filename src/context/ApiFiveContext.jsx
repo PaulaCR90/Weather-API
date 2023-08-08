@@ -7,7 +7,7 @@ export const ApiFiveContext = createContext({
 });
 
 export const ApiFiveContextProvider = ({ children }) => {
-  const [apiFiveDays, setApiFiveDays] = useState(fiveDaysResponse);
+  const [apiFiveDays, setApiFiveDays] = useState({});
 
   return (
     <ApiFiveContext.Provider value={{ apiFiveDays, setApiFiveDays }}>
