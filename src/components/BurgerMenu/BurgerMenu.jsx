@@ -9,7 +9,7 @@ const MenuHamburguesa = () => {
     <>
       <img
         className="toggle"
-        src="../../../public/assets/menu.png"
+        src="./assets/menu.png"
         onClick={() => setIsOpen(!isOpen)}
       />
       <div id="hamburguesa" className={isOpen ? "isOpen" : "isClosed"}>
