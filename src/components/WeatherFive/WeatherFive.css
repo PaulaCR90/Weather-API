@@ -22,14 +22,7 @@
     background-color: var(--five-background);
     border-radius: 25px;
     border: 0.5px solid var(--five-border);
-    cursor: pointer;
-    transition: all .2s ease-in-out;
     color: var(--five-border);
-}
-
-.each-day-weather:hover {
-    background-color: var(--five-hover-background);
-    transform: scale(1.1);
 }
 
 @media screen and (min-width: 700px) {
@@ -37,7 +30,7 @@
         justify-content: space-around;
         border: 1px solid var(--five-border);
         border-radius: 25px;
-        width: 85vw;
+        width: 85svw;
     }
 
     .each-day-weather {

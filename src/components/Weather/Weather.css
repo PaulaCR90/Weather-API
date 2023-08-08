@@ -1,13 +1,13 @@
 article {
   gap: 1rem;
-  width: 100vw;
+  width: 100svw;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 
 .main-weather, .main-conditions {
-  width: 90vw;
+  width: 90svw;
   display: flex;
   flex-direction: column;
   align-items: center;

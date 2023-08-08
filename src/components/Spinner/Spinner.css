@@ -2,11 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100svh;
 }
 
 .spinner-div > img {
-  height: 10vh;
+  height: 10svh;
   width: fit-content;
 }
 
@@ -30,6 +30,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      height: 100svh;
     }
   }
